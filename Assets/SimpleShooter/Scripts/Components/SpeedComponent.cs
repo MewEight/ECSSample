@@ -5,7 +5,7 @@ using Unity.Mathematics;
 
 [Serializable]
 [GenerateAuthoringComponent]
-public struct RotationComponent : IComponentData
+public struct SpeedComponent : IComponentData
 {
     // Add fields to your component here. Remember that:
     //
@@ -20,6 +20,6 @@ public struct RotationComponent : IComponentData
     // * You should focus on the data structure that makes the most sense
     //   for runtime use here. Authoring Components will be used for 
     //   authoring the data in the Editor.
-    public float radiansPerSecond;
-    
+
+    public float value;
 }

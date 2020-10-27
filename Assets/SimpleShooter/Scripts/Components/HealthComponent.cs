@@ -4,8 +4,7 @@ using Unity.Entities;
 using Unity.Mathematics;
 
 [Serializable]
-[GenerateAuthoringComponent]
-public struct PlayerComponent : IComponentData
+public struct HealthComponent : IComponentData
 {
     // Add fields to your component here. Remember that:
     //
@@ -20,4 +19,6 @@ public struct PlayerComponent : IComponentData
     // * You should focus on the data structure that makes the most sense
     //   for runtime use here. Authoring Components will be used for 
     //   authoring the data in the Editor.
+    
+    
 }

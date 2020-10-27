@@ -5,7 +5,7 @@ using Unity.Jobs;
 using Unity.Mathematics;
 using Unity.Transforms;
 
-public class RotationSystem : SystemBase
+public class FireBulletSystem : SystemBase
 {
     protected override void OnUpdate()
     {
@@ -19,10 +19,9 @@ public class RotationSystem : SystemBase
         // meaning it will process all entities in the world that have both
         // Translation and Rotation components. Change it to process the component
         // types you want.
-        float deltaTime = Time.DeltaTime;
-        
-        
-        Entities.ForEach((ref Rotation rotation, in RotationComponent rotComp) => {
+
+        Entities.ForEach((ref Translation translation, in Rotation rotation, in FireBulletComponent input) =>
+        {
             // Implement the work to perform for each entity here.
             // You should only access data that is local or that is a
             // field on this job. Note that the 'rotation' parameter is
@@ -31,7 +30,10 @@ public class RotationSystem : SystemBase
             // that want to read Rotation component data.
             // For example,
             //     translation.Value += math.mul(rotation.Value, new float3(0, 0, 1)) * deltaTime;
-            rotation.Value = math.mul(math.normalize(rotation.Value), quaternion.AxisAngle(math.up(), rotComp.radiansPerSecond * deltaTime));
-        }).ScheduleParallel();
+            if (input.fire)
+            {
+                EntityManager.Instantiate(input.bulletEntity);
+            }
+        }).WithoutBurst().Run();
     }
 }

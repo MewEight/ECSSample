@@ -5,7 +5,7 @@ using Unity.Mathematics;
 
 [Serializable]
 [GenerateAuthoringComponent]
-public struct PlayerComponent : IComponentData
+public struct RotateToMouseComponent : IComponentData
 {
     // Add fields to your component here. Remember that:
     //

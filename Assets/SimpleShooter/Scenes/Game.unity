@@ -249,7 +249,11 @@ GameObject:
   - component: {fileID: 1165265169}
   - component: {fileID: 1165265168}
   - component: {fileID: 1165265170}
+  - component: {fileID: 1165265172}
   - component: {fileID: 1165265171}
+  - component: {fileID: 1165265174}
+  - component: {fileID: 1165265173}
+  - component: {fileID: 1165265175}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -344,10 +348,64 @@ MonoBehaviour:
   m_GameObject: {fileID: 1165265167}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc21a9eea2005c04d92700d43f195b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 5
+--- !u!114 &1165265172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165265167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b4687185dfb2dc41ad0a9db791cd395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+--- !u!114 &1165265173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165265167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cedda7686f7aa0849807e71010e079fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement:
+    x: 0
+    y: 0
+  fire: 0
+--- !u!114 &1165265174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165265167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca6affdc7104660489e1ef9a729ce6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1165265175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165265167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec3f3c6739436f458f1de2e30278360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletEntity: {fileID: 6934975087109249766, guid: 6183e772da8aa004b9af5976baffb969,
+    type: 3}
 --- !u!1 &1507708689
 GameObject:
   m_ObjectHideFlags: 0

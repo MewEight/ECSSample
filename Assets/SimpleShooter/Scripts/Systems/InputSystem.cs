@@ -12,29 +12,35 @@ public class InputSystem : SystemBase
     {
         float deltaTime = Time.DeltaTime;
 
-        float2 movement = new float2();
+        InputComponent input = new InputComponent();
+        FireBulletComponent fireBullet = new FireBulletComponent();
 
         if (Input.GetKey(KeyCode.W))
         {
-            movement += new float2(0, 1);
+            input.movement += new float2(0, 1);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            movement += new float2(-1, 0);
+            input.movement += new float2(-1, 0);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            movement += new float2(0, -1);
+            input.movement += new float2(0, -1);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            movement += new float2(1, 0);
+            input.movement += new float2(1, 0);
         }
 
-
-        Entities.ForEach((ref Translation t, in PlayerComponent player) =>
+        if (Input.GetMouseButtonDown(0))
         {
-            t.Value += new float3(movement * deltaTime, 0) * player.moveSpeed;
+            fireBullet.fire = true;
+        }
+
+        Entities.ForEach((ref InputComponent player, ref FireBulletComponent fire) =>
+        {
+            player.movement = input.movement;
+            fire.fire = fireBullet.fire;
         }).ScheduleParallel();
     }
 }
